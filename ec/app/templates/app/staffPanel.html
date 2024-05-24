@@ -1,0 +1,51 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}
+  Booking
+{% endblock title %}
+{% block main-content %}
+  {% if user.is_authenticated %}
+    <div class="container">
+      <div class="shadow p-4 mb-5 bg-body bg-body rounded text-black  m-5 ">
+        <h1 class="text-center mt-5 mb-5">User Booking</h1>
+        <br>
+        <div class="row my-3">
+          <div class="col-sm-6 mx-auto text-center">
+            <h3>Your Service Booked!</h3>
+            <hr>
+            <div class="text-center">
+              <iframe src="https://giphy.com/embed/ibolLe3mOqHE3PQTtk"
+                      width="200"
+                      height="200"
+                      frameBorder="1"
+                      class="giphy-embed"
+                      allowFullScreen></iframe>
+            </div>
+          </div>
+        </div>
+        <div class="text-center">
+          <a class="btn btn-primary text-white mx-auto" href="{% url 'userPanel' %}">Edit Appointment</a>
+        </div>
+      </div>
+    </div>
+  {% else %}
+    <div class="container">
+      <div class="shadow p-4 mb-5 bg-body bg-body rounded text-black  m-5">
+        <h1 class="p-2  me-3">First Sign in!</h1>
+        <a href="{% url 'login_Gardener' %}" class="btn btn-primary text-white">Sign in</a>
+      </div>
+    </div>
+  {% endif %}
+  <!--Staff Panel Search-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+  $(document).ready(function () {
+    $("#myInput").on("keyup", function () {
+      var value = $(this).val().toLowerCase();
+      $("#myTable tr").filter(function () {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+  });
+  </script>
+{% endblock main-content %}

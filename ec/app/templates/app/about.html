@@ -1,0 +1,60 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}About{% endblock title %}
+
+{% block banner_slider %}
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static 'app/images/banner/s1.jpg' %}" class="d-block w-100" alt="banner image">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'app/images/banner/s2.jpg' %}" class="d-block w-100" alt="banner image">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'app/images/banner/s3.jpg' %}" class="d-block w-100" alt="banner image">
+      </div>
+    </div>
+  </div>
+{% endblock banner_slider %}
+
+{% block main-content %}
+<div class="container mt-3">
+    
+    <div class="row align-items-center">
+      <div class="col-12 col-md-6">
+        <div class="about-img">
+          <img src="../static/app/images/product/plant.jpg" alt="plant" />
+        </div>
+        
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="about-details">
+          <h2>About Us</h2>
+          <p class="fs-4">
+            We believe that every space can be made more beautiful with plants! Come, join us in our vision to make all spaces green and healthy!
+          </p>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        
+        <div class="about-details">
+          <h2>Mission</h2>
+          <p class="fs-4">
+            Dedicated To Growing an excellent Variety of Superior Plants And Provide our Customers With Best Service Possible.
+        </p>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="about-img">
+          <img src="../static/app/images/product/plant-2.jpg" alt="plant" />
+        </div>
+      </div>
+      
+    </div>
+    <div class="row">
+        
+    </div>
+    <br><br>
+</div>
+{% endblock main-content %}
